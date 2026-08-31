@@ -1741,34 +1741,43 @@ body.hl-saved .pin:not(.saved){opacity:.1}
 .end .colofon{font-family:"IBM Plex Mono",var(--ui),monospace;font-size:10.5px;
  border-top:1px solid var(--line);padding-top:12px;margin-top:18px}
 
+
+
+
 /* ---------- schermi larghi ---------- */
-@media (min-width:900px){
+@media (min-width:820px){
  body{font-size:16.5px}
- .top{padding:10px 26px 10px}
+ .top{padding:10px 22px}
  .tl h1{font-size:17px}
- .sbox{max-width:420px}
- .fdd{gap:7px}
- .intro,.indici,.mapouter,.sec,.dest,.foot,.end,.capintro{max-width:1080px;margin-left:auto;
-  margin-right:auto}
- .dest{margin-bottom:10px}
- .hd h2{font-size:20px}
+ .sbox{max-width:440px}
+ .intro,.indici,.mapouter,.foot,.end{max-width:1180px;margin-left:auto;margin-right:auto}
+ .hd h2{font-size:19px}
  .hd .sb{font-size:15px}
  .bd p,.bd li{font-size:16px}
- .vars{padding:6px 18px 14px}
- .v{padding:12px 15px}
- .v h3{font-size:16px}
+ .v h3{font-size:15.5px}
  .indici-in{padding:0 22px 20px}
- .capintro{padding:0 6px}
 }
-@media (min-width:1200px){
- .indici,.mapouter,.foot,.end,.intro{max-width:1180px}
- /* le schede chiuse si dispongono su due colonne */
- .chapter{display:grid;grid-template-columns:1fr 1fr;gap:0 14px;align-items:start;
-  max-width:1180px;margin:0 auto;padding:0 10px}
+/* due colonne appena c'e' spazio per due schede leggibili */
+@media (min-width:980px){
+ .chapter{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 14px;
+  align-items:start;max-width:1180px;margin:0 auto;padding:0 10px}
  .chapter>.sec,.chapter>.capintro{grid-column:1/-1;max-width:none;margin-left:0;margin-right:0}
  .chapter>.dest{max-width:none;width:100%;margin:0 0 12px}
- /* una scheda aperta occupa tutta la riga */
  .chapter>.dest[open]{grid-column:1/-1}
+}
+/* tre colonne sui monitor grandi, e il contenitore cresce con lo schermo */
+@media (min-width:1500px){
+ .intro,.indici,.mapouter,.foot,.end{max-width:1440px}
+ .chapter{grid-template-columns:repeat(3,minmax(0,1fr));max-width:1440px}
+ .chapter>.dest[open]{grid-column:1/-1}
+}
+@media (min-width:1900px){
+ .intro,.indici,.mapouter,.foot,.end{max-width:1680px}
+ .chapter{grid-template-columns:repeat(4,minmax(0,1fr));max-width:1680px}
+}
+/* una scheda aperta resta su una sola colonna di testo leggibile */
+@media (min-width:1500px){
+ .dest[open]>.vars,.dest[open]>.unesco,.dest[open]>.det,.dest[open]>.pano{max-width:1000px}
 }
 
 </style>
