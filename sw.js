@@ -1,7 +1,7 @@
 /* Expedition Atlas — service worker
    Caches the app shell so the atlas opens from the home screen even offline.
    Bump CACHE whenever you upload a new index.html. */
-var CACHE='atlas-v5.5.0';
+var CACHE='atlas-v5.5.1';
 var SHELL=['./','./index.html','./sw.js'];
 self.addEventListener('install',function(e){
   e.waitUntil(caches.open(CACHE).then(function(c){return c.addAll(SHELL);}).then(function(){return self.skipWaiting();}));
